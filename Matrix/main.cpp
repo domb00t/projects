@@ -3,7 +3,7 @@
 template<typename T,size_t _COLS,size_t _ROWS>
 class Matrix { 
 public:
-    Matrix(T _value = T()) : _matrix(new T*[_cols]) {
+    Matrix() : _matrix(new T*[_cols]) {
         for(size_t _index = 0;_index < _cols;++_index) {
             _matrix[_index] = new T[_rows];
         }
@@ -11,6 +11,18 @@ public:
         for(size_t _index = 0; _index < _cols; ++_index) {
             for(size_t __index = 0; __index < _rows; ++__index) {
                 _matrix[_index][__index] = T();
+            }
+        }
+    }
+
+    Matrix(T _value) : _matrix(new T*[_cols]) {
+        for(size_t _index = 0;_index < _cols;++_index) {
+            _matrix[_index] = new T[_rows];
+        }
+
+        for(size_t _index = 0; _index < _cols; ++_index) {
+            for(size_t __index = 0; __index < _rows; ++__index) {
+                _matrix[_index][__index] = _value;
             }
         }
     }
@@ -74,12 +86,14 @@ private:
     }
 };
 
+// gets type of T
+template <typename T> 
+void test(T) = delete;
+
 int main() {
     Matrix<int,3,3> matrix;
     Matrix<int,3,3> _matrix(matrix);
-    Matrix<int,3,3> __matrix = _matrix;
-
-    std :: cout << &matrix << std :: endl << matrix << std :: endl;
+    Matrix<int,3,3> __matrix = _matrix;    std :: cout << &matrix << std :: endl << matrix << std :: endl;
     std :: cout << &_matrix << std :: endl << _matrix << std :: endl;
     std :: cout << &__matrix << std :: endl << __matrix << std :: endl;
 
