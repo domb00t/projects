@@ -1,0 +1,3 @@
+/home/user/projects/Matrix/build/CMakeFiles/Matrix.dir
+/home/user/projects/Matrix/build/CMakeFiles/edit_cache.dir
+/home/user/projects/Matrix/build/CMakeFiles/rebuild_cache.dir

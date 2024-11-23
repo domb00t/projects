@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall CMakeFiles/Matrix.dir/sources/main.cpp.o CMakeFiles/Matrix.dir/sources/matrix.cpp.o -o Matrix 
